@@ -8,57 +8,23 @@
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --paper:#f2e8d0;
-  --paper2:#e6d9b8;
-  --ink:#0f0c08;
-  --red:#b01c1c;
-  --red2:#7a1212;
-  --faded:#7a6a4a;
-  --green:#1e6b3a;
+  --paper:#f2e8d0;--paper2:#e6d9b8;--ink:#0f0c08;
+  --red:#b01c1c;--red2:#7a1212;--faded:#7a6a4a;--green:#1e6b3a;
 }
-body{
-  background:#111008;
-  font-family:'IBM Plex Mono',monospace;
-  min-height:100vh;
-  display:flex;
-  align-items:flex-start;
-  justify-content:center;
-  padding:24px 16px 60px;
-}
-body::after{
-  content:'';position:fixed;inset:0;
-  background:repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(0,0,0,0.04) 3px,rgba(0,0,0,0.04) 4px);
-  pointer-events:none;z-index:999;
-}
+body{background:#111008;font-family:'IBM Plex Mono',monospace;min-height:100vh;display:flex;align-items:flex-start;justify-content:center;padding:24px 16px 60px;}
+body::after{content:'';position:fixed;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(0,0,0,0.04) 3px,rgba(0,0,0,0.04) 4px);pointer-events:none;z-index:999;}
 .wrapper{width:100%;max-width:600px;}
-.tape-strip{
-  background:var(--red);padding:10px 20px;
-  border:2px solid #000;border-bottom:0;box-shadow:6px -3px 0 #000;
-}
-.tape-strip p{
-  font-family:'Bebas Neue',sans-serif;font-size:14px;
-  letter-spacing:4px;color:#fff;text-align:center;
-}
+.tape-strip{background:var(--red);padding:10px 20px;border:2px solid #000;border-bottom:0;box-shadow:6px -3px 0 #000;}
+.tape-strip p{font-family:'Bebas Neue',sans-serif;font-size:14px;letter-spacing:4px;color:#fff;text-align:center;}
 .folder{background:var(--paper);border:2px solid #000;box-shadow:6px 6px 0 #000;}
-.folder-tab-row{
-  background:var(--paper2);border-bottom:2px solid #8b7355;
-  padding:10px 20px;display:flex;align-items:center;justify-content:space-between;
-}
+.folder-tab-row{background:var(--paper2);border-bottom:2px solid #8b7355;padding:10px 20px;display:flex;align-items:center;justify-content:space-between;}
 .folder-tab-row span{font-family:'Special Elite',cursive;font-size:11px;color:var(--faded);letter-spacing:2px;text-transform:uppercase;}
 .case-num{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--faded);border:1px solid var(--faded);padding:2px 8px;}
 .folder-inner{display:flex;}
-.holes{
-  width:34px;flex-shrink:0;background:var(--paper2);
-  border-right:1px solid #c8b88a;
-  display:flex;flex-direction:column;align-items:center;justify-content:space-evenly;padding:40px 0;
-}
+.holes{width:34px;flex-shrink:0;background:var(--paper2);border-right:1px solid #c8b88a;display:flex;flex-direction:column;align-items:center;justify-content:space-evenly;padding:40px 0;}
 .hole{width:14px;height:14px;border-radius:50%;background:#111008;box-shadow:inset 0 1px 3px rgba(0,0,0,0.6);}
 .folder-content{flex:1;padding:24px 22px 32px 18px;}
-.case-heading{
-  font-family:'Bebas Neue',sans-serif;
-  font-size:clamp(44px,10vw,62px);line-height:0.9;
-  color:var(--ink);letter-spacing:2px;margin-bottom:4px;
-}
+.case-heading{font-family:'Bebas Neue',sans-serif;font-size:clamp(44px,10vw,62px);line-height:0.9;color:var(--ink);letter-spacing:2px;margin-bottom:4px;}
 .case-sub{font-family:'Special Elite',cursive;font-size:12px;color:var(--faded);letter-spacing:1px;}
 .divider-dashed{width:100%;height:1px;border-top:1px dashed #c8b88a;margin:16px 0;}
 .progress-wrap{margin-bottom:22px;}
@@ -66,10 +32,7 @@ body::after{
 .progress-bar{background:#d4c9a8;height:4px;}
 .progress-fill{height:100%;background:var(--red);transition:width 0.5s ease;width:0%;}
 .progress-pct{font-size:10px;color:var(--red);font-weight:500;}
-.clue-card{
-  background:#fff;border:1px solid #c8b88a;
-  margin-bottom:12px;position:relative;transition:all 0.3s;
-}
+.clue-card{background:#fff;border:1px solid #c8b88a;margin-bottom:12px;position:relative;transition:all 0.3s;}
 .clue-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--faded);}
 .clue-card.active::before{background:var(--red);}
 .clue-card.solved::before{background:var(--green);}
@@ -80,71 +43,37 @@ body::after{
 .clue-card.solved .clue-status{color:var(--green);}
 .clue-body{padding:0 16px 14px;}
 .clue-text{font-family:'Special Elite',cursive;font-size:15px;color:var(--ink);line-height:1.7;margin-bottom:10px;}
-.clue-text .blank{
-  display:inline-block;border-bottom:2px solid var(--red);
-  min-width:70px;text-align:center;color:var(--red);font-weight:bold;letter-spacing:2px;
-}
-.clue-hint{
-  font-size:11px;color:var(--faded);font-family:'IBM Plex Mono',monospace;
-  margin-bottom:12px;letter-spacing:0.3px;line-height:1.5;
-  padding-left:10px;border-left:2px solid #d4c9a8;
-}
+.clue-text .blank{display:inline-block;border-bottom:2px solid var(--red);min-width:70px;text-align:center;color:var(--red);font-weight:bold;letter-spacing:2px;}
+.clue-hint{font-size:11px;color:var(--faded);font-family:'IBM Plex Mono',monospace;margin-bottom:12px;letter-spacing:0.3px;line-height:1.5;padding-left:10px;border-left:2px solid #d4c9a8;}
 .clue-hint b{color:var(--red2);}
 .answer-row{display:flex;gap:8px;}
-.answer-input{
-  flex:1;background:var(--paper);border:none;border-bottom:2px solid var(--ink);
-  padding:9px 10px;font-family:'IBM Plex Mono',monospace;
-  font-size:13px;color:var(--ink);outline:none;border-radius:0;transition:border-color 0.2s;
-}
+.answer-input{flex:1;background:var(--paper);border:none;border-bottom:2px solid var(--ink);padding:9px 10px;font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--ink);outline:none;border-radius:0;transition:border-color 0.2s;}
 .answer-input:focus{border-bottom-color:var(--red);}
 .answer-input::placeholder{color:#b8a888;font-size:12px;}
 .answer-input:disabled{opacity:0.4;cursor:not-allowed;}
-.check-btn{
-  background:var(--ink);color:var(--paper);border:none;
-  padding:9px 16px;font-family:'Bebas Neue',sans-serif;
-  font-size:17px;letter-spacing:2px;cursor:pointer;transition:background 0.2s;
-}
+.check-btn{background:var(--ink);color:var(--paper);border:none;padding:9px 16px;font-family:'Bebas Neue',sans-serif;font-size:17px;letter-spacing:2px;cursor:pointer;transition:background 0.2s;}
 .check-btn:hover:not(:disabled){background:var(--red);}
 .check-btn:disabled{opacity:0.35;cursor:not-allowed;}
 .wrong-msg{font-size:11px;color:var(--red);margin-top:5px;display:none;}
 .ok-msg{font-size:11px;color:var(--green);margin-top:5px;display:none;font-weight:bold;}
-.lock-overlay{
-  position:absolute;inset:0;background:rgba(242,232,208,0.9);
-  display:flex;align-items:center;justify-content:center;
-  font-family:'Bebas Neue',sans-serif;font-size:13px;letter-spacing:3px;color:var(--faded);
-}
+.lock-overlay{position:absolute;inset:0;background:rgba(242,232,208,0.9);display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:13px;letter-spacing:3px;color:var(--faded);}
 .lock-overlay.hidden{display:none;}
 .final-form{display:none;animation:fadeUp 0.5s ease;}
 .final-form.show{display:block;}
-.form-intro{
-  font-family:'Special Elite',cursive;font-size:13px;color:var(--faded);
-  text-align:center;margin:20px 0 16px;line-height:1.6;
-  border-top:1px dashed #c8b88a;padding-top:18px;
-}
+.form-intro{font-family:'Special Elite',cursive;font-size:13px;color:var(--faded);text-align:center;margin:20px 0 16px;line-height:1.6;border-top:1px dashed #c8b88a;padding-top:18px;}
 .field-label{font-size:9px;letter-spacing:2px;color:var(--faded);text-transform:uppercase;margin-bottom:5px;display:block;}
-.field-input{
-  width:100%;background:var(--paper);border:none;border-bottom:2px solid var(--ink);
-  padding:11px 10px;font-family:'IBM Plex Mono',monospace;
-  font-size:14px;color:var(--ink);outline:none;border-radius:0;margin-bottom:14px;
-}
+.field-input{width:100%;background:var(--paper);border:none;border-bottom:2px solid var(--ink);padding:11px 10px;font-family:'IBM Plex Mono',monospace;font-size:14px;color:var(--ink);outline:none;border-radius:0;margin-bottom:14px;}
 .field-input:focus{border-bottom-color:var(--red);}
-.submit-btn{
-  width:100%;background:var(--red);color:#fff;border:none;
-  padding:16px;font-family:'Bebas Neue',sans-serif;
-  font-size:22px;letter-spacing:4px;cursor:pointer;transition:background 0.2s;margin-top:4px;
-}
+.submit-btn{width:100%;background:var(--red);color:#fff;border:none;padding:16px;font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:4px;cursor:pointer;transition:background 0.2s;margin-top:4px;}
 .submit-btn:hover{background:var(--red2);}
 .privacy{font-size:10px;color:var(--faded);text-align:center;margin-top:10px;letter-spacing:0.5px;}
 .success-screen{display:none;text-align:center;padding:20px 0;animation:fadeUp 0.6s ease;}
 .success-screen.show{display:block;}
-.success-stamp{
-  font-family:'Bebas Neue',sans-serif;font-size:58px;
-  color:var(--green);border:4px solid var(--green);
-  display:inline-block;padding:4px 20px;letter-spacing:5px;
-  transform:rotate(-4deg);margin-bottom:16px;opacity:0.9;
-}
+.success-stamp{font-family:'Bebas Neue',sans-serif;font-size:58px;color:var(--green);border:4px solid var(--green);display:inline-block;padding:4px 20px;letter-spacing:5px;transform:rotate(-4deg);margin-bottom:16px;opacity:0.9;}
 .success-text{font-family:'Special Elite',cursive;font-size:15px;color:var(--ink);line-height:1.8;margin-bottom:10px;}
-.success-quote{font-size:12px;color:var(--red2);font-family:'IBM Plex Mono',monospace;font-style:italic;}
+.drive-btn{display:inline-block;margin-top:14px;background:var(--red);color:#fff;font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:3px;padding:14px 28px;text-decoration:none;border:none;cursor:pointer;}
+.drive-btn:hover{background:var(--red2);}
+.success-quote{font-size:12px;color:var(--red2);font-family:'IBM Plex Mono',monospace;font-style:italic;margin-top:16px;}
 .success-case{font-size:9px;color:var(--faded);letter-spacing:2px;margin-top:18px;text-transform:uppercase;}
 @keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
 @keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
@@ -163,9 +92,7 @@ body::after{
     </div>
     <div class="folder-inner">
       <div class="holes">
-        <div class="hole"></div>
-        <div class="hole"></div>
-        <div class="hole"></div>
+        <div class="hole"></div><div class="hole"></div><div class="hole"></div>
       </div>
       <div class="folder-content">
         <div id="main-content">
@@ -176,6 +103,7 @@ body::after{
             <div class="progress-label">Expediente descifrado — <span id="pct">0%</span></div>
             <div class="progress-bar"><div class="progress-fill" id="pfill"></div></div>
           </div>
+          <!-- PISTA 1 -->
           <div class="clue-card active" id="c1">
             <div class="clue-top">
               <div class="clue-num">01</div>
@@ -193,6 +121,7 @@ body::after{
               <div class="ok-msg" id="ok1">✓ ¡Correcto! Pista 2 desbloqueada.</div>
             </div>
           </div>
+          <!-- PISTA 2 -->
           <div class="clue-card locked" id="c2">
             <div class="lock-overlay" id="lk2">🔒 Resuelve la Evidencia A primero</div>
             <div class="clue-top">
@@ -211,6 +140,7 @@ body::after{
               <div class="ok-msg" id="ok2">✓ ¡Bien! Evidencia final desbloqueada.</div>
             </div>
           </div>
+          <!-- PISTA 3 -->
           <div class="clue-card locked" id="c3">
             <div class="lock-overlay" id="lk3">🔒 Resuelve la Evidencia B primero</div>
             <div class="clue-top">
@@ -229,6 +159,7 @@ body::after{
               <div class="ok-msg" id="ok3">✓ ¡Expediente completado! 🎉</div>
             </div>
           </div>
+          <!-- FINAL FORM -->
           <div class="final-form" id="ff">
             <div class="form-intro">
               ✅ Las 3 evidencias confirmadas<br>
@@ -242,12 +173,16 @@ body::after{
             <p class="privacy">Sin spam. Solo contenido que vale la pena.</p>
           </div>
         </div>
+        <!-- SUCCESS -->
         <div class="success-screen" id="ss">
           <div class="success-stamp">ACCESO<br>CONCEDIDO</div>
           <p class="success-text">
             ¡Ya eres parte del expediente!<br>
-            El BTS exclusivo y el adelanto de <em>"Cuatro Paredes"</em><br>llegan a tu carpeta en segundos.
+            El BTS exclusivo y el adelanto de <em>"Cuatro Paredes"</em><br>están listos para ti.
           </p>
+          <a class="drive-btn" href="https://drive.google.com/drive/folders/1PV7cm2ak_dlFkJz0nAYwTN0bmRLB6kpf?usp=sharing" target="_blank">
+            VER CONTENIDO EXCLUSIVO
+          </a>
           <p class="success-quote">
             "Nadie sabe lo que pasó entre las cuatro paredes...<br>
             pero tú eres de los primeros en saberlo."
@@ -259,20 +194,18 @@ body::after{
   </div>
 </div>
 <script>
-const FORM_ID = '1FAIpQLSc00icxwNZkZC6LWKpwkWSKhCWtjSBipj-ZCe4WmuGDWMwvXA';
-const ENTRY_NOMBRE = 'entry.1719857238';
-const DRIVE_LINK = 'https://drive.google.com/drive/folders/1PV7cm2ak_dlFkJz0nAYwTN0bmRLB6kpf?usp=sharing';
-const answers = {
-  1: ['amor','el amor','tu amor'],
-  2: ['señal','una señal','la señal','senal','una senal','la senal'],
-  3: ['acertijo','un acertijo','el acertijo']
+const FORM_ID='1FAIpQLSc00icxwNZkZC6LWKpwkWSKhCWtjSBipj-ZCe4WmuGDWMwvXA';
+const ENTRY_NOMBRE='entry.1719857238';
+const answers={
+  1:['amor','el amor','tu amor'],
+  2:['señal','una señal','la señal','senal','una senal','la senal'],
+  3:['acertijo','un acertijo','el acertijo']
 };
-let solved = 0;
+let solved=0;
 function norm(s){return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z]/g,'').trim();}
 function chk(n){
   const inp=document.getElementById('a'+n);
-  const val=inp.value.trim();
-  if(!val)return;
+  const val=inp.value.trim();if(!val)return;
   const nv=norm(val);
   const ok=answers[n].some(a=>norm(a)===nv||(norm(a).includes(nv)&&nv.length>=4));
   if(ok){
@@ -298,8 +231,7 @@ function chk(n){
 function unlock(n){
   const card=document.getElementById('c'+n);
   document.getElementById('lk'+n).classList.add('hidden');
-  const inp=document.getElementById('a'+n);
-  const btn=document.getElementById('b'+n);
+  const inp=document.getElementById('a'+n);const btn=document.getElementById('b'+n);
   card.classList.remove('locked');card.classList.add('active');
   inp.disabled=false;inp.placeholder='Escribe la palabra...';
   if(btn)btn.disabled=false;
@@ -314,7 +246,10 @@ function updateProgress(){
 function submitForm(){
   const name=document.getElementById('fn').value.trim();
   const email=document.getElementById('fe').value.trim();
-  if(!email||!email.includes('@')){document.getElementById('fe').style.borderBottomColor='#b01c1c';document.getElementById('fe').focus();return;}
+  if(!email||!email.includes('@')){
+    document.getElementById('fe').style.borderBottomColor='#b01c1c';
+    document.getElementById('fe').focus();return;
+  }
   const url=`https://docs.google.com/forms/d/e/${FORM_ID}/formResponse`;
   const data=new FormData();
   data.append(ENTRY_NOMBRE,name);
@@ -322,7 +257,6 @@ function submitForm(){
   fetch(url,{method:'POST',mode:'no-cors',body:data});
   document.getElementById('main-content').style.display='none';
   document.getElementById('ss').classList.add('show');
-  setTimeout(()=>window.open(DRIVE_LINK,'_blank'),1500);
 }
 </script>
 </body>
