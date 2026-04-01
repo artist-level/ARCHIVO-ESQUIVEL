@@ -32,18 +32,12 @@ body::after{
 }
 .wrapper{width:100%;max-width:600px;}
 .tape-strip{
-  background:var(--red);
-  padding:10px 20px;
-  border:2px solid #000;
-  border-bottom:0;
-  box-shadow:6px -3px 0 #000;
+  background:var(--red);padding:10px 20px;
+  border:2px solid #000;border-bottom:0;box-shadow:6px -3px 0 #000;
 }
 .tape-strip p{
-  font-family:'Bebas Neue',sans-serif;
-  font-size:14px;
-  letter-spacing:4px;
-  color:#fff;
-  text-align:center;
+  font-family:'Bebas Neue',sans-serif;font-size:14px;
+  letter-spacing:4px;color:#fff;text-align:center;
 }
 .folder{background:var(--paper);border:2px solid #000;box-shadow:6px 6px 0 #000;}
 .folder-tab-row{
@@ -59,90 +53,85 @@ body::after{
   display:flex;flex-direction:column;align-items:center;justify-content:space-evenly;padding:40px 0;
 }
 .hole{width:14px;height:14px;border-radius:50%;background:#111008;box-shadow:inset 0 1px 3px rgba(0,0,0,0.6);}
-.folder-content{flex:1;padding:28px 24px 36px 18px;}
+.folder-content{flex:1;padding:24px 22px 32px 18px;}
 .case-heading{
   font-family:'Bebas Neue',sans-serif;
   font-size:clamp(44px,10vw,62px);line-height:0.9;
   color:var(--ink);letter-spacing:2px;margin-bottom:4px;
 }
-.case-sub{font-family:'Special Elite',cursive;font-size:12px;color:var(--faded);margin-bottom:6px;letter-spacing:1px;}
-.divider-dashed{width:100%;height:1px;border-top:1px dashed #c8b88a;margin:14px 0;}
-.instructions{
-  background:rgba(176,28,28,0.06);
-  border:1px dashed rgba(176,28,28,0.35);
-  padding:10px 14px;margin-bottom:18px;
-  font-family:'Special Elite',cursive;
-  font-size:12px;color:var(--faded);line-height:1.6;
-}
+.case-sub{font-family:'Special Elite',cursive;font-size:12px;color:var(--faded);letter-spacing:1px;}
+.divider-dashed{width:100%;height:1px;border-top:1px dashed #c8b88a;margin:16px 0;}
+.progress-wrap{margin-bottom:22px;}
 .progress-label{font-size:9px;letter-spacing:2px;color:var(--faded);text-transform:uppercase;margin-bottom:5px;}
-.progress-bar{background:#d4c9a8;height:5px;margin-bottom:20px;}
+.progress-bar{background:#d4c9a8;height:4px;}
 .progress-fill{height:100%;background:var(--red);transition:width 0.5s ease;width:0%;}
 .progress-pct{font-size:10px;color:var(--red);font-weight:500;}
 .clue-card{
-  background:#fff;border:1px solid #c8b88a;margin-bottom:14px;position:relative;transition:all 0.3s;
+  background:#fff;border:1px solid #c8b88a;
+  margin-bottom:12px;position:relative;transition:all 0.3s;
 }
 .clue-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--faded);}
 .clue-card.active::before{background:var(--red);}
 .clue-card.solved::before{background:var(--green);}
-.clue-top{padding:14px 16px 0;display:flex;align-items:center;gap:10px;margin-bottom:8px;}
-.clue-num{font-family:'Bebas Neue',sans-serif;font-size:26px;color:var(--red);line-height:1;}
+.clue-top{padding:12px 16px 0;display:flex;align-items:center;gap:10px;margin-bottom:6px;}
+.clue-num{font-family:'Bebas Neue',sans-serif;font-size:22px;color:var(--red);line-height:1;}
 .clue-label{font-size:9px;letter-spacing:2px;color:var(--faded);text-transform:uppercase;}
 .clue-status{margin-left:auto;font-size:9px;letter-spacing:1px;color:var(--faded);text-transform:uppercase;}
 .clue-card.solved .clue-status{color:var(--green);}
-.clue-body{padding:0 16px 16px;}
-.clue-text{font-family:'Special Elite',cursive;font-size:14px;color:var(--ink);line-height:1.7;margin-bottom:10px;}
-.clue-text .blank{display:inline-block;border-bottom:2px solid var(--red);min-width:70px;text-align:center;color:var(--red);font-weight:bold;letter-spacing:2px;}
+.clue-body{padding:0 16px 14px;}
+.clue-text{font-family:'Special Elite',cursive;font-size:15px;color:var(--ink);line-height:1.7;margin-bottom:10px;}
+.clue-text .blank{
+  display:inline-block;border-bottom:2px solid var(--red);
+  min-width:70px;text-align:center;color:var(--red);font-weight:bold;letter-spacing:2px;
+}
 .clue-hint{
-  background:rgba(176,28,28,0.07);border-left:3px solid var(--red);
-  padding:8px 12px;font-size:11px;color:var(--faded);
-  font-family:'IBM Plex Mono',monospace;margin-bottom:14px;
-  letter-spacing:0.3px;line-height:1.5;
+  font-size:11px;color:var(--faded);font-family:'IBM Plex Mono',monospace;
+  margin-bottom:12px;letter-spacing:0.3px;line-height:1.5;
+  padding-left:10px;border-left:2px solid #d4c9a8;
 }
 .clue-hint b{color:var(--red2);}
 .answer-row{display:flex;gap:8px;}
 .answer-input{
-  flex:1;background:var(--paper);
-  border:1px solid #c8b88a;border-bottom:2px solid var(--ink);
-  padding:10px 12px;font-family:'IBM Plex Mono',monospace;
+  flex:1;background:var(--paper);border:none;border-bottom:2px solid var(--ink);
+  padding:9px 10px;font-family:'IBM Plex Mono',monospace;
   font-size:13px;color:var(--ink);outline:none;border-radius:0;transition:border-color 0.2s;
 }
-.answer-input:focus{border-color:var(--red);border-bottom-color:var(--red);}
+.answer-input:focus{border-bottom-color:var(--red);}
 .answer-input::placeholder{color:#b8a888;font-size:12px;}
 .answer-input:disabled{opacity:0.4;cursor:not-allowed;}
 .check-btn{
   background:var(--ink);color:var(--paper);border:none;
-  padding:10px 18px;font-family:'Bebas Neue',sans-serif;
-  font-size:18px;letter-spacing:2px;cursor:pointer;transition:background 0.2s;
+  padding:9px 16px;font-family:'Bebas Neue',sans-serif;
+  font-size:17px;letter-spacing:2px;cursor:pointer;transition:background 0.2s;
 }
 .check-btn:hover:not(:disabled){background:var(--red);}
 .check-btn:disabled{opacity:0.35;cursor:not-allowed;}
-.wrong-msg{font-size:11px;color:var(--red);margin-top:6px;letter-spacing:0.5px;display:none;}
-.ok-msg{font-size:11px;color:var(--green);margin-top:6px;letter-spacing:0.5px;display:none;font-weight:bold;}
+.wrong-msg{font-size:11px;color:var(--red);margin-top:5px;display:none;}
+.ok-msg{font-size:11px;color:var(--green);margin-top:5px;display:none;font-weight:bold;}
 .lock-overlay{
-  position:absolute;inset:0;background:rgba(242,232,208,0.88);
+  position:absolute;inset:0;background:rgba(242,232,208,0.9);
   display:flex;align-items:center;justify-content:center;
   font-family:'Bebas Neue',sans-serif;font-size:13px;letter-spacing:3px;color:var(--faded);
 }
 .lock-overlay.hidden{display:none;}
 .final-form{display:none;animation:fadeUp 0.5s ease;}
 .final-form.show{display:block;}
-.success-tape{
-  background:rgba(30,107,58,0.12);border:1px dashed rgba(30,107,58,0.4);
-  padding:12px 16px;font-size:12px;color:var(--green);
-  letter-spacing:1px;font-family:'Special Elite',cursive;margin:18px 0;line-height:1.5;
+.form-intro{
+  font-family:'Special Elite',cursive;font-size:13px;color:var(--faded);
+  text-align:center;margin:20px 0 16px;line-height:1.6;
+  border-top:1px dashed #c8b88a;padding-top:18px;
 }
-.field-label{font-size:9px;letter-spacing:2px;color:var(--faded);text-transform:uppercase;margin-bottom:6px;display:block;}
+.field-label{font-size:9px;letter-spacing:2px;color:var(--faded);text-transform:uppercase;margin-bottom:5px;display:block;}
 .field-input{
-  width:100%;background:var(--paper);
-  border:1px solid #c8b88a;border-bottom:2px solid var(--ink);
-  padding:12px;font-family:'IBM Plex Mono',monospace;
-  font-size:14px;color:var(--ink);outline:none;border-radius:0;margin-bottom:16px;
+  width:100%;background:var(--paper);border:none;border-bottom:2px solid var(--ink);
+  padding:11px 10px;font-family:'IBM Plex Mono',monospace;
+  font-size:14px;color:var(--ink);outline:none;border-radius:0;margin-bottom:14px;
 }
 .field-input:focus{border-bottom-color:var(--red);}
 .submit-btn{
   width:100%;background:var(--red);color:#fff;border:none;
   padding:16px;font-family:'Bebas Neue',sans-serif;
-  font-size:22px;letter-spacing:4px;cursor:pointer;transition:background 0.2s;
+  font-size:22px;letter-spacing:4px;cursor:pointer;transition:background 0.2s;margin-top:4px;
 }
 .submit-btn:hover{background:var(--red2);}
 .privacy{font-size:10px;color:var(--faded);text-align:center;margin-top:10px;letter-spacing:0.5px;}
@@ -164,39 +153,29 @@ body::after{
 </head>
 <body>
 <div class="wrapper">
-
   <div class="tape-strip">
     <p>ACCESO RESTRINGIDO &nbsp;—&nbsp; CASO ACTIVO</p>
   </div>
-
   <div class="folder">
     <div class="folder-tab-row">
       <span>Expediente — Confidencial</span>
       <div class="case-num">CASO #AE-0508</div>
     </div>
-
     <div class="folder-inner">
       <div class="holes">
         <div class="hole"></div>
         <div class="hole"></div>
         <div class="hole"></div>
       </div>
-
       <div class="folder-content">
         <div id="main-content">
-
           <div class="case-heading">ARCHIVO<br>ESQUIVEL</div>
           <div class="case-sub">// Tres pistas para desbloquear el acceso exclusivo //</div>
           <div class="divider-dashed"></div>
-
-          <div class="instructions">
-            📋 Completa los espacios usando la letra de <b>"Cuatro Paredes"</b>. Cada pista tiene la frase casi completa — solo escribe la palabra que falta.
+          <div class="progress-wrap">
+            <div class="progress-label">Expediente descifrado — <span id="pct">0%</span></div>
+            <div class="progress-bar"><div class="progress-fill" id="pfill"></div></div>
           </div>
-
-          <div class="progress-label">Expediente descifrado — <span id="pct">0%</span></div>
-          <div class="progress-bar"><div class="progress-fill" id="pfill"></div></div>
-
-          <!-- PISTA 1 -->
           <div class="clue-card active" id="c1">
             <div class="clue-top">
               <div class="clue-num">01</div>
@@ -204,23 +183,16 @@ body::after{
               <div class="clue-status" id="s1">Sin resolver</div>
             </div>
             <div class="clue-body">
-              <div class="clue-text">
-                La letra dice:<br>
-                <em>"Fueron los latidos de tu <span class="blank">_ _ _ _</span> que se fugó"</em>
-              </div>
-              <div class="clue-hint">
-                💡 <b>Pista:</b> Es lo que sientes cuando estás enamorado. Empieza con <b>"A"</b> y tiene 4 letras.
-              </div>
+              <div class="clue-text"><em>"Fueron los latidos de tu <span class="blank">_ _ _ _</span> que se fugó"</em></div>
+              <div class="clue-hint">💡 Empieza con <b>"A"</b> · 4 letras · Es lo que sientes cuando estás enamorado</div>
               <div class="answer-row">
-                <input class="answer-input" id="a1" placeholder="Escribe la palabra que falta..." onkeydown="if(event.key==='Enter')chk(1)" autocomplete="off">
-                <button class="check-btn" onclick="chk(1)">✓ OK</button>
+                <input class="answer-input" id="a1" placeholder="Escribe la palabra..." onkeydown="if(event.key==='Enter')chk(1)" autocomplete="off">
+                <button class="check-btn" onclick="chk(1)">✓</button>
               </div>
-              <div class="wrong-msg" id="w1">✗ Casi... es lo opuesto al odio 💔</div>
+              <div class="wrong-msg" id="w1">✗ Es lo opuesto al odio 💔</div>
               <div class="ok-msg" id="ok1">✓ ¡Correcto! Pista 2 desbloqueada.</div>
             </div>
           </div>
-
-          <!-- PISTA 2 -->
           <div class="clue-card locked" id="c2">
             <div class="lock-overlay" id="lk2">🔒 Resuelve la Evidencia A primero</div>
             <div class="clue-top">
@@ -229,23 +201,16 @@ body::after{
               <div class="clue-status" id="s2">Bloqueada</div>
             </div>
             <div class="clue-body">
-              <div class="clue-text">
-                El coro dice:<br>
-                <em>"Busco cada día solo una <span class="blank">_ _ _ _ _</span>"</em>
-              </div>
-              <div class="clue-hint">
-                💡 <b>Pista:</b> Lo que el protagonista busca todos los días. Algo que te indica que alguien estuvo ahí, como una huella o un rastro. Empieza con <b>"S"</b> y tiene 5 letras.
-              </div>
+              <div class="clue-text"><em>"Busco cada día solo una <span class="blank">_ _ _ _ _</span>"</em></div>
+              <div class="clue-hint">💡 Empieza con <b>"S"</b> · 5 letras · Lo que deja alguien cuando desaparece — una huella, un rastro</div>
               <div class="answer-row">
-                <input class="answer-input" id="a2" placeholder="Resuelve la Evidencia A primero..." disabled onkeydown="if(event.key==='Enter')chk(2)" autocomplete="off">
-                <button class="check-btn" onclick="chk(2)" disabled id="b2">✓ OK</button>
+                <input class="answer-input" id="a2" placeholder="Escribe la palabra..." disabled onkeydown="if(event.key==='Enter')chk(2)" autocomplete="off">
+                <button class="check-btn" onclick="chk(2)" disabled id="b2">✓</button>
               </div>
               <div class="wrong-msg" id="w2">✗ Piensa en lo que dejan las personas cuando desaparecen 🔍</div>
               <div class="ok-msg" id="ok2">✓ ¡Bien! Evidencia final desbloqueada.</div>
             </div>
           </div>
-
-          <!-- PISTA 3 -->
           <div class="clue-card locked" id="c3">
             <div class="lock-overlay" id="lk3">🔒 Resuelve la Evidencia B primero</div>
             <div class="clue-top">
@@ -254,39 +219,29 @@ body::after{
               <div class="clue-status" id="s3">Bloqueada</div>
             </div>
             <div class="clue-body">
-              <div class="clue-text">
-                La segunda estrofa dice:<br>
-                <em>"Como un <span class="blank">_ _ _ _ _ _ _ _</span> que nunca se va a resolver"</em>
-              </div>
-              <div class="clue-hint">
-                💡 <b>Pista:</b> Es un misterio o enigma sin solución. Empieza con <b>"A"</b> y tiene 8 letras. Los detectives los resuelven.
-              </div>
+              <div class="clue-text"><em>"Como un <span class="blank">_ _ _ _ _ _ _ _</span> que nunca se va a resolver"</em></div>
+              <div class="clue-hint">💡 Empieza con <b>"A"</b> · 8 letras · Un misterio sin solución</div>
               <div class="answer-row">
-                <input class="answer-input" id="a3" placeholder="Resuelve la Evidencia B primero..." disabled onkeydown="if(event.key==='Enter')chk(3)" autocomplete="off">
-                <button class="check-btn" onclick="chk(3)" disabled id="b3">✓ OK</button>
+                <input class="answer-input" id="a3" placeholder="Escribe la palabra..." disabled onkeydown="if(event.key==='Enter')chk(3)" autocomplete="off">
+                <button class="check-btn" onclick="chk(3)" disabled id="b3">✓</button>
               </div>
-              <div class="wrong-msg" id="w3">✗ La pista está arriba ↑ ¡Casi lo tienes!</div>
+              <div class="wrong-msg" id="w3">✗ La pista está arriba ↑</div>
               <div class="ok-msg" id="ok3">✓ ¡Expediente completado! 🎉</div>
             </div>
           </div>
-
-          <!-- FINAL FORM -->
           <div class="final-form" id="ff">
-            <div class="success-tape">
-              ✅ LAS 3 EVIDENCIAS CONFIRMADAS<br>
-              Ingresa tus datos para recibir el BTS exclusivo y el adelanto de "Cuatro Paredes".
+            <div class="form-intro">
+              ✅ Las 3 evidencias confirmadas<br>
+              Ingresa tus datos para acceder al contenido exclusivo
             </div>
-            <label class="field-label">Tu nombre</label>
+            <label class="field-label">Nombre</label>
             <input class="field-input" id="fn" placeholder="Nombre del agente..." type="text" autocomplete="name">
-            <label class="field-label">Correo electrónico (el acceso llega aquí)</label>
+            <label class="field-label">Correo electrónico</label>
             <input class="field-input" id="fe" placeholder="tu@correo.com" type="email" autocomplete="email">
             <button class="submit-btn" onclick="submitForm()">QUIERO MI ACCESO EXCLUSIVO</button>
-            <p class="privacy">Sin spam. Solo contenido que vale la pena. Puedes salir cuando quieras.</p>
+            <p class="privacy">Sin spam. Solo contenido que vale la pena.</p>
           </div>
-
         </div>
-
-        <!-- SUCCESS -->
         <div class="success-screen" id="ss">
           <div class="success-stamp">ACCESO<br>CONCEDIDO</div>
           <p class="success-text">
@@ -299,104 +254,75 @@ body::after{
           </p>
           <p class="success-case">Caso #AE-0508 — Expediente cerrado · 8 de Mayo</p>
         </div>
-
       </div>
     </div>
   </div>
 </div>
-
 <script>
 const FORM_ID = '1FAIpQLSc00icxwNZkZC6LWKpwkWSKhCWtjSBipj-ZCe4WmuGDWMwvXA';
 const ENTRY_NOMBRE = 'entry.1719857238';
 const DRIVE_LINK = 'https://drive.google.com/drive/folders/1PV7cm2ak_dlFkJz0nAYwTN0bmRLB6kpf?usp=sharing';
-
 const answers = {
   1: ['amor','el amor','tu amor'],
   2: ['señal','una señal','la señal','senal','una senal','la senal'],
   3: ['acertijo','un acertijo','el acertijo']
 };
 let solved = 0;
-
-function norm(s){
-  return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z]/g,'').trim();
-}
-
+function norm(s){return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z]/g,'').trim();}
 function chk(n){
-  const inp = document.getElementById('a'+n);
-  const val = inp.value.trim();
-  if(!val) return;
-  const nv = norm(val);
-  const ok = answers[n].some(a => norm(a) === nv || (norm(a).includes(nv) && nv.length >= 4));
+  const inp=document.getElementById('a'+n);
+  const val=inp.value.trim();
+  if(!val)return;
+  const nv=norm(val);
+  const ok=answers[n].some(a=>norm(a)===nv||(norm(a).includes(nv)&&nv.length>=4));
   if(ok){
-    const card = document.getElementById('c'+n);
-    card.classList.remove('active','locked');
-    card.classList.add('solved');
-    document.getElementById('s'+n).textContent = '✓ Resuelta';
-    document.getElementById('ok'+n).style.display = 'block';
-    document.getElementById('w'+n).style.display = 'none';
-    inp.disabled = true;
-    const btn = card.querySelector('.check-btn');
-    btn.disabled = true; btn.textContent = '✓'; btn.style.background = '#1e6b3a';
-    solved++;
-    updateProgress();
-    if(n < 3) setTimeout(()=>unlock(n+1), 500);
-    if(solved === 3) setTimeout(()=>{
-      document.getElementById('ff').classList.add('show');
-      document.getElementById('ff').scrollIntoView({behavior:'smooth',block:'start'});
-    }, 700);
-  } else {
-    const card = document.getElementById('c'+n);
+    const card=document.getElementById('c'+n);
+    card.classList.remove('active','locked');card.classList.add('solved');
+    document.getElementById('s'+n).textContent='✓ Resuelta';
+    document.getElementById('ok'+n).style.display='block';
+    document.getElementById('w'+n).style.display='none';
+    inp.disabled=true;
+    const btn=card.querySelector('.check-btn');
+    btn.disabled=true;btn.textContent='✓';btn.style.background='#1e6b3a';
+    solved++;updateProgress();
+    if(n<3)setTimeout(()=>unlock(n+1),500);
+    if(solved===3)setTimeout(()=>{document.getElementById('ff').classList.add('show');document.getElementById('ff').scrollIntoView({behavior:'smooth',block:'start'});},700);
+  }else{
+    const card=document.getElementById('c'+n);
     card.classList.add('shake');
-    document.getElementById('w'+n).style.display = 'block';
-    setTimeout(()=>card.classList.remove('shake'), 350);
-    setTimeout(()=>document.getElementById('w'+n).style.display='none', 3000);
+    document.getElementById('w'+n).style.display='block';
+    setTimeout(()=>card.classList.remove('shake'),350);
+    setTimeout(()=>document.getElementById('w'+n).style.display='none',3000);
   }
 }
-
 function unlock(n){
-  const card = document.getElementById('c'+n);
-  const lk = document.getElementById('lk'+n);
-  const inp = document.getElementById('a'+n);
-  const btn = document.getElementById('b'+n);
-  card.classList.remove('locked'); card.classList.add('active');
-  lk.classList.add('hidden');
-  inp.disabled = false; inp.placeholder = 'Escribe tu respuesta...';
-  if(btn) btn.disabled = false;
-  document.getElementById('s'+n).textContent = 'Sin resolver';
+  const card=document.getElementById('c'+n);
+  document.getElementById('lk'+n).classList.add('hidden');
+  const inp=document.getElementById('a'+n);
+  const btn=document.getElementById('b'+n);
+  card.classList.remove('locked');card.classList.add('active');
+  inp.disabled=false;inp.placeholder='Escribe la palabra...';
+  if(btn)btn.disabled=false;
+  document.getElementById('s'+n).textContent='Sin resolver';
   setTimeout(()=>card.scrollIntoView({behavior:'smooth',block:'nearest'}),100);
 }
-
 function updateProgress(){
-  const p = Math.round((solved/3)*100);
-  document.getElementById('pfill').style.width = p+'%';
-  document.getElementById('pct').textContent = p+'%';
+  const p=Math.round((solved/3)*100);
+  document.getElementById('pfill').style.width=p+'%';
+  document.getElementById('pct').textContent=p+'%';
 }
-
 function submitForm(){
-  const name = document.getElementById('fn').value.trim();
-  const email = document.getElementById('fe').value.trim();
-  if(!email || !email.includes('@')){
-    document.getElementById('fe').style.borderBottomColor = '#b01c1c';
-    document.getElementById('fe').focus();
-    return;
-  }
-
-  // Enviar a Google Forms silenciosamente
-  const url = `https://docs.google.com/forms/d/e/${FORM_ID}/formResponse`;
-  const data = new FormData();
-  data.append(ENTRY_NOMBRE, name);
-  data.append('emailAddress', email);
-
-  fetch(url, {
-    method: 'POST',
-    mode: 'no-cors',
-    body: data
-  });
-
-  // Mostrar pantalla de éxito y abrir Drive
-  document.getElementById('main-content').style.display = 'none';
+  const name=document.getElementById('fn').value.trim();
+  const email=document.getElementById('fe').value.trim();
+  if(!email||!email.includes('@')){document.getElementById('fe').style.borderBottomColor='#b01c1c';document.getElementById('fe').focus();return;}
+  const url=`https://docs.google.com/forms/d/e/${FORM_ID}/formResponse`;
+  const data=new FormData();
+  data.append(ENTRY_NOMBRE,name);
+  data.append('emailAddress',email);
+  fetch(url,{method:'POST',mode:'no-cors',body:data});
+  document.getElementById('main-content').style.display='none';
   document.getElementById('ss').classList.add('show');
-  setTimeout(()=> window.open(DRIVE_LINK, '_blank'), 1500);
+  setTimeout(()=>window.open(DRIVE_LINK,'_blank'),1500);
 }
 </script>
 </body>
